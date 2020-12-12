@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+  {% include "head.html" %}
+    {% block extrahead %}
+    {% endblock %}
+
+<body>
+<div id="wrapper" class="wrapper clearfix">
+ {% include "header.html" %}
+
+ {% block content %}
+ {% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% include 'scripts.html' %}
+
+ </div>
+
+</body>
+
+</html>
