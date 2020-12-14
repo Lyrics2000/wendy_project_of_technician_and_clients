@@ -26,7 +26,7 @@ def upload_image_path(instance,filename):
 
 
 class TechnicianDetails(models.Model):
-    TechnicianId = models.OneToOneField(CustomUser,on_delete=models.CASCADE,default=0)
+    TechnicianId = models.ManyToManyField(CustomUser)
     ShopLocation = models.CharField(max_length=200,blank=True,null=True)
     PhoneNumber = models.CharField(max_length=200,blank=True,null=True)
     Description = models.TextField(max_length=200,blank=True,null=True)
