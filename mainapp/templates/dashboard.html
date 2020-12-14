@@ -1,0 +1,196 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+============================================= -->
+<section id="page-title" class="page-title">
+	<div class="container-fluid bg-overlay bg-overlay-dark">
+		<div class="bg-section">
+			<img src="{% static 'assets\images\page-title\title-20.jpg' %}" alt="Background">
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="title title-1 text--center">
+					<div class="title--content">
+						<div class="title--heading">
+							<h1>Our Products</h1>
+						</div>
+					</div>
+				</div><!-- .page-title end -->
+			</div><!-- .col-md-12 end -->
+		</div><!-- .row end -->
+	</div><!-- .container end -->
+</section><!-- #page-title end -->
+
+
+
+
+<section id="shop" class="shop shop-3 bg-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12  col-md-9">
+			<div class="row">
+			<div class="col-xs-12 col-sm-12  col-md-12">
+						<div class="shop-options">
+					<div class="product-options2 pull-left pull-none-xs">
+						<ul class="list-inline">
+							<li>
+								<div class="product-sort mb-15-xs">
+									<span>sort by:</span>
+									<i class="fa fa-angle-down"></i>
+									<select>
+										<option selected="" value="Default">Product Name</option>
+										<option value="Larger">Newest Items</option>
+										<option value="Larger">oldest Items</option>
+										<option value="Larger">Hot Items</option>
+										<option value="Small">Highest Price</option>
+										<option value="Medium">Lowest Price</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<div class="product-sort">
+									<span>Show:</span>
+									<i class="fa fa-angle-down"></i>
+									<select>
+										<option selected="" value="10">10 items / page</option>
+										<option value="25">25 items / page</option>
+										<option value="50">50 items / page</option>
+										<option value="100">100 items / page</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+					</div><!-- .product-options end -->
+					<div class="product-view-mode text-right pull-none-xs">
+						<span>view as:</span>
+						<a id="switch-grid" class="active" href="#"><i class="fa fa-th-large"></i></a>
+						<a id="switch-list" href="#"><i class="fa fa-th-list"></i></a>
+					</div><!-- .product-num end -->
+				</div><!-- .shop-options end -->
+					</div><!-- .col-md-12 end -->
+		</div><!-- .row end -->
+				<div class="row">
+			<!-- Product #1 -->
+				{% if products %}
+				{% for p in products %}
+			<div class="col-xs-12 col-sm-6 col-md-4 product-item">
+				<div class="product--img">
+					<img src="{{p.product_image.url}}" alt="Product">
+					<!-- .product-overlay end -->
+				</div><!-- .product-img end -->
+				<div class="product--content">
+					<!-- .product-cat end -->
+					<div class="product--title">
+						<h3><a href="#">{{p.product_name}}</a></h3>
+					</div><!-- .product-title end -->
+					<!-- .product-price end -->
+				</div><!-- .product-bio end -->
+			</div>
+				{% endfor %}
+				{% endif %}
+			
+			<!-- .product end -->
+			
+			<!-- .product end -->
+			
+		</div><!-- .row end -->
+				<div class="row">
+			<div class="col-xs-12 col-sm-12  col-md-12 clearfix  text--center">
+			  <ul class="pagination">
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+					  <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+				  </a>
+				</li>
+			  </ul>
+			</div><!-- .col-md-12 end -->
+		</div><!-- .row end -->
+			</div><!-- .col-md-9 end -->
+			<div class="col-xs-12 col-sm-12  col-md-3">
+				<!-- Search
+===
+=== === === === === === === === === === === === === === -->
+<div class="widget widget-search">
+	<div class="widget--content">
+		<form class="form-search">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Type Your Search Words">
+				<span class="input-group-btn">
+								<button class="btn" type="button"><i class="fa fa-search"></i></button>
+							  </span>
+			
+			</div>
+			<!-- /input-group -->
+		</form>
+	</div>
+</div> <!-- .widget-search end -->
+
+<!-- Categories
+===
+=== === === === === === === === === === === === === === -->
+ <!-- .widget-categories end -->
+<!-- Recent Products
+===
+=== === === === === === === === === === === === === === -->
+<div class="widget widget-recent-products">
+	<div class="widget--title">
+		<h5>Recent Items</h5>
+	</div>
+	<div class="divider--line">
+		<i class="divider divider--1"></i>
+		<i class="divider divider--2"></i>
+		<i class="divider divider--3"></i>
+		<i class="divider divider--4"></i>
+	</div>
+	<div class="widget--content">
+		<!-- Product #1 -->
+		<div class="product clearfix">
+			<img src="{% static 'assets\images\shop\thumb\3.jpg' %}" alt="product">
+			<div class="product-desc">
+				<div class="product-title">
+					<a href="#">Mismo Briefcase</a>
+				</div>
+				<div class="product-meta">
+					<span>$38.99</span>
+				</div>
+			</div>
+		</div>
+		<!-- .recent-product end -->
+
+		<!-- Product #2 -->
+		<div class="product clearfix">
+			<img src="{% static 'assets\images\shop\thumb\4.jpg' %}" alt="product">
+			<div class="product-desc">
+				<div class="product-title">
+					<a href="#">Brown Leather Boots</a>
+				</div>
+				<div class="product-meta">
+					<span>$33.99</span>
+				</div>
+			</div>
+		</div>
+		<!-- .recent-product end -->
+
+		<!-- Product #3 -->
+		
+		<!-- .recent-product end -->
+	</div>
+	
+</div> <!-- .widget-recent end -->			
+
+<!-- Tag Clouds
+===
+=== === === === === === === === === === === === === === -->
+<!-- .widget-tags end -->			</div><!-- .col-md-3 end -->
+		</div><!-- .row end -->
+		
+	</div><!-- .container end -->
+</section><!-- #shop end -->
+
+
+{% endblock content %}

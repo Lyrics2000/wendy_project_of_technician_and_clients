@@ -24,7 +24,7 @@ def signInClient(request):
         print(user)
         if user is not None:
             login(request,user)
-            return redirect("mainapp:client_dashbord")
+            return redirect("mainapp:dashbord")
     
     return render(request,'client_signin.html',context)
 
@@ -51,7 +51,7 @@ def signUpClient(request):
             user.first_name = firstName
             user.save()
             
-            return redirect("mainapp:client_dashbord")
+            return redirect("mainapp:dashbord")
             
     return render(request,'Client_signup.html',context)
 
@@ -77,7 +77,7 @@ def signInTechnician(request):
         print(user)
         if user is not None:
             login(request,user)
-            return redirect("mainapp:technician_dashbord")
+            return redirect("mainapp:dashbord")
     
     return render(request,'technician_signin.html',context)
 
@@ -97,11 +97,18 @@ def signUpTechnician(request):
             lastName = request.POST.get("lastName")
 
             email = request.POST.get("email")
+            print(email,"email id placed")
+            request.session['mtech_id'] = email
             password = request.POST.get("password")
             user = CustomUser.objects.create_user( email = email , password = password)
             user.last_name = lastName
             user.first_name = firstName
             user.save()
+            
+            
+            emaill  = request.session.get('mtech_id')
+            print(emaill,"najhfuhuj")
+            print("Okay you fuck you")
             
             return redirect("mainapp:technician_dashbord")
             
